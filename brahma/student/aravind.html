@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .glitter-header {
+            font-family: 'Arial', sans-serif;
+            font-size: 48px;
+            position: relative;
+            cursor: pointer;
+            user-select: none;
+            background: linear-gradient(45deg, #ff3333, #ff9933, #33ff33, #3399ff, #9933ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            z-index: 2;
+            animation: glitter-animation 1s linear infinite;
+        }
+
+        @keyframes glitter-animation {
+            0% {
+                transform: translateX(-50%);
+            }
+            100% {
+                transform: translateX(-49%);
+            }
+        }
+
+        .glitter-header::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(-45deg, transparent, transparent 10%, #ffcc00 10%, #ffcc00 20%);
+            opacity: 0;
+            pointer-events: none;
+            z-index: 1;
+            animation: sparkle 1s ease infinite;
+        }
+
+        @keyframes sparkle {
+            0% {
+                opacity: 0.8;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .glitter-header:hover::before {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="glitter-header">Hover Me!</div>
+</body>
+
+</html>

@@ -1,0 +1,156 @@
+/* Reset some default browser styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Apply a background color to the entire page */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    line-height: 1.6;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* Style the header */
+
+h1 {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+    font-size: 24px;
+}
+
+
+/* Style the form container */
+
+form {
+    background-color: #fff;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Style form labels */
+
+label {
+    display: block;
+    margin-top: 10px;
+}
+
+
+/* Style select and input elements */
+
+select,
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+
+/* Style the search button */
+
+input[type="submit"] {
+    background-color: #337ab7;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #235a9c;
+}
+
+
+/* Style the result table */
+
+h2 {
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+table,
+th,
+td {
+    border: 1px solid #ccc;
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: left;
+}
+
+
+/* Hover effect for table rows */
+
+table tr:hover {
+    background-color: #f7f7f7;
+}
+
+
+/* Additional styling for buttons and animations */
+
+input[type="submit"] {
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+input[type="submit"]:hover {
+    background-color: #235a9c;
+    transform: scale(1.05);
+}
+
+
+/* Style select dropdown on hover */
+
+select:hover {
+    border: 1px solid #235a9c;
+}
+
+.container{
+
+    width: 80%; /* Set the width of the container */
+    max-width: 1200px; /* Set the maximum width of the container */
+    margin: 0 auto;
+    padding-top: 20px;  /* Center the container horizontally */
+    padding: 60px; /* Set inner spacing for content within the container */
+    background-color: #f6f2f2; /* Set the background color of the container */
+    border-radius: 20px; /* Set the border radius to create rounded corners */
+    box-shadow: 0px 0px 10px 0px rgba(213, 9, 9, 0.1);
+    position: relative;
+    top: 70px;
+}
+
+/* Add more advanced styling and animations as needed */

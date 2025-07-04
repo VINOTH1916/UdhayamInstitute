@@ -1,0 +1,85 @@
+/* Reset some default browser styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* Apply a background color to the entire page */
+
+body {
+    background-color: #080000;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+
+/* Style the header */
+
+.admin-header {
+    background-color: #333333;
+    color: #fff;
+    text-align: center;
+    padding: 150px;
+}
+
+.admin-header h1 {
+    font-size: 50px;
+}
+
+
+/* Style the menu */
+
+/* Default styles for the menu */
+.admin-menu {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f2f2f2;
+}
+
+.menu-table {
+    width: 100%;
+}
+
+.menu-button {
+    display: block;
+    text-decoration: none;
+    padding: 40px;
+    margin: 10px 0;
+    background-color: #010901;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 40px;
+}
+
+/* Media query for screens with a maximum width of 768px (mobile devices) */
+@media only screen and (max-width: 768px) {
+    .menu-button {
+        padding: 20px;
+        margin: 8px 0;
+    }
+
+    .admin-menu {
+        padding: 10px;
+    }
+}
+
+.container{
+    width: 80%; /* Set the width of the container */
+    max-width: 1200px; /* Set the maximum width of the container */
+    margin: 0 auto;
+    padding-top: 20px;  /* Center the container horizontally */
+    padding: 60px; /* Set inner spacing for content within the container */
+    background-color: #f6f2f2; /* Set the background color of the container */
+    border-radius: 20px; /* Set the border radius to create rounded corners */
+    box-shadow: 0px 0px 10px 0px rgba(213, 9, 9, 0.1);
+    position: relative;
+    top: 70px;
+}
+
+
+/* Add more styling and customization as needed for other elements on your page */

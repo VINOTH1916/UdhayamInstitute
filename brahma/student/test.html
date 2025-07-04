@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mark 10th Grade Student Attendance</title>
+    <style>
+      body{
+        background-color: #4CAF50;
+      }
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+        }
+
+        .present-checkbox, .absent-checkbox {
+            margin-right: 10px;
+        }
+
+        .present-checkbox input[type="checkbox"],
+        .absent-checkbox input[type="checkbox"] {
+            display: none;
+        }
+
+        .present-checkbox label,
+        .absent-checkbox label {
+            cursor: pointer;
+            padding: 10px 20px;
+            border-radius: 5px;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .present-checkbox input,body[type="checkbox"]:checked + label {
+            background-color: #4CAF50; /* Green */
+        }
+
+        .absent-checkbox input[type="checkbox"]:checked + label {
+            background-color: #f44336; /* Red */
+        }
+
+        #submitBtn:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <h1>Mark 10th Grade Student Attendance</h1>
+
+    <form action="process_attendance_10th.php" method="POST" onsubmit="<?php echo $attendanceMarked10th ? 'disableSubmitButton()' : ''; ?>">
+        <table>
+            <thead>
+                <tr>
+                    <th>Student roll no</th>
+                    <th>Student Name</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                foreach ($students as $student) {
+                    echo '<tr>';
+                    echo '<td>' . $student['roll_no'] . '</td>';
+                    echo '<td>' . $student['student_name'] . '</td>';
+                    echo '<td class="checkbox-group">';
+                    echo '<div class="present-checkbox"><input type="checkbox" id="present_' . $student['roll_no'] . '" name="attendance[' . $student['roll_no'] . ']" value="present"> <label for="present_' . $student['roll_no'] . '">Present</label></div>';
+                    echo '<div class="absent-checkbox"><input type="checkbox" id="absent_' . $student['roll_no'] . '" name="attendance[' . $student['roll_no'] . ']" value="absent"> <label for="absent_' . $student['roll_no'] . '">Absent</label></div>';
+                    echo '</td>';
+                    echo '</tr>';
+                }
+                ?>
+            </tbody>
+        </table>
+        <input type="submit" id="submitBtn" name="submit10th" value="<?php echo $attendanceMarked10th ? 'Attendance Already Marked' : 'Submit Attendance'; ?>" <?php echo $attendanceMarked10th ? 'disabled' : ''; ?>>
+    </form>
+
+    <form action="attendance_report.php" method="GET">
+        <input type="submit" name="checkAttendance" value="Check Attendance Records">
+    </form>
+</body>
+</html>

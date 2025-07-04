@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="admin.css">
+    <title>UDHAYAM INSTITUTE Attendance</title>
+</head>
+
+<body>
+    <header>
+        <h1>UDHAYAM INSTITUTE Attendance</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="attendance_10th.php">10th Grade</a></li>
+            <li><a href="attend_art_11th.php">11th Arts</a></li>
+            <li><a href="attend_art_12th.php">12th Arts</a></li>
+            <li><a href="attend_sci_11th.php">11th Science</a></li>
+            <li><a href="attend_sci_12th.php">12th Science</a></li>
+        </ul>
+    </nav>
+
+    <div class="slider">
+        <?php include 'attendance_10th.php'; ?>
+        <?php include 'attend_art_11th.php'; ?>
+        <?php include 'attend_art_12th.php'; ?>
+        <?php include 'attend_sci_11th.php'; ?>
+        <?php include 'attend_sci_12th.php'; ?>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 UDHAYAM INSTITUTE. All rights reserved.</p>
+    </footer>
+
+    <script src="admin.js"></script>
+</body>
+
+</html>

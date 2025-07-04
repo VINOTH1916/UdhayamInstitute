@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Marks</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Marks</h1>
+        <form id="editMarkForm" action="edit_marks.php" method="POST">
+            <label for="std">Standard:</label>
+            <select id="std" name="std" required>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+            </select>
+            
+            <label for="name_of_grp">Group:</label>
+            <select id="name_of_grp" name="name_of_grp" required>
+                <option value="none">None</option>
+                <option value="art">Art</option>
+                <option value="sci">Science</option>
+            </select>
+
+            <label for="test_name">Test Name:</label>
+            <input type="text" id="test_name" name="test_name" required>
+            
+            <label for="subject_name">Subject Name:</label>
+            <input type="text" id="subject_name" name="subject_name" required>
+            
+            <input type="submit" value="Retrieve Marks">
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="home.css">
+</head>
+<body>
+
+
+
+<div id="navbar">
+  
+<span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+<img src="logo.png" height="70px" xwidth="auto">
+  <div id="navbar-right">
+
+    <a href="#default" id="logo">UDHAYAM INSTIUTE</a>
+  </div>
+</div>
+<div id="myNav" class="overlay">
+   
+  <div class="overlay-content">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="home.html">HOME</a>
+    <a href="#">SERVICE</a>
+    <a href="#">STUDENTS</a>
+    <a href="contact.html">CONTACT</a>
+    <a href="vishnu/login.html">LOGIN</a>
+  </div>
+</div>
+
+<div style="margin-top:210px;padding:15px 15px 2500px;font-size:30px">
+
+<center><h4 class="page-head-line">WELCOME TO udhayam institute</h4></center>
+<center><hr style="width:50%;color:black"></center>
+
+<div class="containerquotes">
+<h1>Quotes</h1>
+
+    <h2>Recent Quotes:</h2>
+    <ul>
+        <?php
+        // Connect to your database (replace with your database credentials)
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "udhayam_institute";
+
+        $conn = new mysqli($servername, $username, $password, $dbname);
+
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+        }
+
+        // Retrieve and display recent quotes
+        $sql = "SELECT quote, created_at FROM quotes ORDER BY created_at DESC LIMIT 10";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                echo "<li>" . htmlspecialchars($row["quote"]) . "<br><small>Posted on " . $row["created_at"] . "</small></li>";
+            }
+        } else {
+            echo "No quotes available.";
+        }
+
+        $conn->close();
+        ?>
+    </ul>
+
+      </div>
+<div class="slideshow-container">
+
+<div class="mySlides fade">
+  <div class="numbertext">1 / 3</div>
+  <img src="test1.jpeg" style="width:100%">
+  <div class="text">Caption Text</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">2 / 3</div>
+  <img src="img_snow_wide.jpg" style="width:100%">
+  <div class="text">Caption Two</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 3</div>
+  <img src="img_mountains_wide.jpg" style="width:100%">
+  <div class="text">Caption Three</div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">❮</a>
+<a class="next" onclick="plusSlides(1)">❯</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+</div>
+
+</div>
+
+<script>
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+
+
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
+
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    document.getElementById("navbar").style.padding = "30px 10px";
+    document.getElementById("logo").style.fontSize = "25px";
+  } else {
+    document.getElementById("navbar").style.padding = "80px 10px";
+    document.getElementById("logo").style.fontSize = "35px";
+  }
+}
+</script>
+
+</body>
+</html>
